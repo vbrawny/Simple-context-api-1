@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
-
+import AppState from "./context/AppState";
 import HomePage from "./components/HomePage/HomePage";
 import FeedPage from "./components/FeedPage/FeedPage";
 
@@ -20,10 +20,12 @@ function App() {
             </li>
           </ul>
         </nav>
-        <Switch>
-          <Route exact path="/home" component={HomePage} />
-          <Route exact path="/feed" component={FeedPage} />
-        </Switch>
+        <AppState>
+          <Switch>
+            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/feed" component={FeedPage} />
+          </Switch>
+        </AppState>
       </Router>
     </div>
   );

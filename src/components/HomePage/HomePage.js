@@ -1,8 +1,12 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import AppContext from "../../context/app-context";
 const HomePage = () => {
+  const { message, isAuth } = useContext(AppContext);
   return (
-    <h2 style={{ background: "#eee" }}>This is the home page</h2>
+    <div style={{ background: isAuth ? "green" : "red" }}>
+      <h2 style={{ background: "#eee" }}>This is the home page</h2>
+      <p>{message}</p>
+    </div>
     //   {isAuth ? (
     //     <button onClick={() => setIsAuth(false)}>Logout</button>
     //   ) : (

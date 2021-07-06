@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
-import AppState from "./context/AppState";
+
 import HomePage from "./components/HomePage/HomePage";
 import FeedPage from "./components/FeedPage/FeedPage";
+
+import AppState from "./context/AppState";
 
 function App() {
   return (
